@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "../style.css";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
 import Cards from "./Cards";
 import GetClasses from "./classComponents/GetClasses";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchClasses } from "../Redux/Actions/classAction";
+import { useSelector } from "react-redux";
 import Users from "./User/Users";
 import Teachers from "./Teacher/Teachers";
 import Students from "./Student/Students";
@@ -16,14 +15,6 @@ const Home = () => {
     const [activeSection, setActiveSection] = useState("dashboard");
     const { userInfo } = useSelector((state) => state.auth); //Current user
     const role = userInfo?.role;
-    // const dispatch = useDispatch();
-
-    // Agar classes section active hai to data fetch kare
-    // useEffect(() => {
-    //     if (activeSection === "classes") {
-    //         dispatch(fetchClasses());
-    //     }
-    // }, [activeSection, dispatch]);
 
     // Section names readable banane ke liye
     const sectionNames = {
