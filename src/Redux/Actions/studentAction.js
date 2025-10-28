@@ -35,7 +35,7 @@ const getToken = (getState) => {
     }
 };
 
-const host = "http://localhost:7000"; // apna backend URL
+const host = "https://school-management-system-mern-mu.vercel.app"; // apna backend URL
 
 
 //  fetch all students
