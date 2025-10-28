@@ -11,7 +11,6 @@ const cors = require("cors");
 // const sendGmail = require('./util/sendGmail.js');
 
 // ! create express app
-// sendGmail("kalabala53626@gmail.com", "1234567")
 const app = express();
 
 // ! load the evironmental variable
@@ -27,7 +26,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:3001",
-  "https://school-management-system-mern-wsc5.vercel.app",
+  "https://school-management-system-mern-12.vercel.app",
 ];
 
 app.use(cors({
