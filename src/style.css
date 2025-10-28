@@ -1403,3 +1403,38 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
+
+
+/* ===================== assign button =========================== */
+.assign-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  z-index: 999;
+  overflow: hidden;
+  transition: all 0.7s ease;
+}
+
+.assign-btn:hover {
+  width: 180px;
+  border-radius: 50px;
+  transform: scale(1.05);
+}
+
+.assign-btn .assign-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.assign-btn:hover .assign-text {
+  opacity: 1;
+  width: auto;
+}

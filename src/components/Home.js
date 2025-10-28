@@ -58,7 +58,6 @@ const Home = () => {
                     {activeSection === "teachers" && <Teachers />}
                     {activeSection === "students" && <Students />}
                     {activeSection === "settings" && <h3>Settings Section comming soon...</h3>}
-                    {/* {activeSection === "profile" && <Profile/>} */}
                 </div>
             </div>
         </>

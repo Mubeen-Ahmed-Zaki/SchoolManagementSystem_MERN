@@ -5,8 +5,8 @@ const asyncHandler = require("express-async-handler");
 
 
 // @desc Create a new class
-// @route POST /api/v1/classes
-// @access Admin / Teacher
+// @route POST /api/v1/classes/createClass
+// @access Admin 
 exports.createClass = asyncHandler(async (req, res, next) => {
     const { className, section } = req.body;
 
@@ -34,7 +34,7 @@ exports.createClass = asyncHandler(async (req, res, next) => {
 
 
 // @desc Get all classes
-// @route GET /api/v1/classes
+// @route GET /api/v1/classes/getAllClasses
 // @access Admin
 exports.getClasses = asyncHandler(async (req, res, next) => {
     const classes = await Class.find()

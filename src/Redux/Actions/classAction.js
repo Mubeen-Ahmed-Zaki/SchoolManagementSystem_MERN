@@ -30,7 +30,7 @@ export const fetchClasses = () => async (dispatch, getState) => {
 
     const token = getToken(getState);
 
-    const res = await fetch(`${host}/api/v1/classes`, {
+    const res = await fetch(`${host}/api/v1/classes/getAllClasses`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const createClass = (classData) => async (dispatch, getState) => {
 
     const token = getToken(getState);
 
-    const res = await fetch(`${host}/api/v1/classes`, {
+    const res = await fetch(`${host}/api/v1/classes/createClass`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

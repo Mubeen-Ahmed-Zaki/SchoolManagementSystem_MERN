@@ -103,7 +103,7 @@ const ClassList = () => {
     useEffect(() => {
         if (showModalAssTeachToCls) {
             dispatch(fetchAllTeachers());
-            dispatch(fetchClasses());
+            // dispatch(fetchClasses());
         }
     }, [dispatch, showModalAssTeachToCls]);
 
@@ -175,7 +175,7 @@ const ClassList = () => {
     useEffect(() => {
         if (showModalAssStuToCls) {
             dispatch(fetchAllStudents());
-            dispatch(fetchClasses());
+            // dispatch(fetchClasses());
         }
     }, [dispatch, showModalAssStuToCls]);
 
@@ -224,18 +224,23 @@ const ClassList = () => {
         );
     }
 
-    if (error) {
-        return (
-            <div className="container py-5">
-                <div className="alert alert-danger d-flex align-items-center" role="alert">
-                    <i className="fas fa-exclamation-triangle me-2"></i>
-                    <div>
-                        <strong>Error:</strong> {error}
-                    </div>
-                </div>
-            </div>
-        );
-    }
+    // if (error) {
+    //     return (
+    //         <div className="container py-5">
+    //             <div className="alert alert-danger d-flex align-items-center" role="alert">
+    //                 <div>
+    //                     <h5 className="mb-1">Oops! Something went wrong</h5> <br />
+    //                     <i className="fas fa-exclamation-triangle me-2"></i>
+    //                     <strong>Error:</strong> {error}
+    //                 </div>
+    //             </div>
+    //             <button className="btn btn-primary btn-lg shadow" onClick={() => dispatch(fetchClasses())}>
+    //                 <i className="fas fa-redo me-2"></i>
+    //                 Try Again
+    //             </button>
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className="container py-4">
@@ -257,26 +262,6 @@ const ClassList = () => {
                     </button>
                 </div>
             </div>
-
-            {/* Alert */}
-            {
-                error && (
-                    <div className="alert alert-danger text-center fade show" role="alert" style={{
-                        position: "fixed",
-                        top: "10%",
-                        right: "25%",
-                        zIndex: 1055,
-                        backgroundColor: "white",
-                        color: "red",
-                        borderRadius: "12px",
-                        boxShadow: "0 8px 25px rgba(0,0,0,0.3)",
-                        width: "400px",
-                        padding: "20px",
-                    }}>
-                        <i className="fas fa-exclamation-triangle me-2"></i> {error}
-                    </div>
-                )
-            }
 
             {/* Classes List */}
             {classes && classes.length > 0 ? (
@@ -414,7 +399,7 @@ const ClassList = () => {
                                                                 <td className="d-flex justify-content-end">
                                                                     <button
                                                                         onClick={() => handleStuRemove(cls._id, student._id)}
-                                                                        className="btn btn-outline-warning btn-sm"
+                                                                        className="btn btn-outline-info btn-sm"
                                                                     >
                                                                         <i className="fas fa-user-graduate me-2"></i>Remove
                                                                     </button>
@@ -454,7 +439,7 @@ const ClassList = () => {
             ) : (
                 <div className="empty-state text-center py-5">
                     <i className="fas fa-inbox fa-4x text-muted mb-3"></i>
-                    <h4 className="text-muted">No Classes Found</h4>
+                    <h4 className="text-danger">{error}</h4>
                     <p className="text-muted mb-4">Start by creating your first class</p>
                     <button className="btn btn-primary" onClick={handleOpenModal}>
                         <i className="fas fa-plus me-2"></i>
@@ -628,11 +613,14 @@ const ClassList = () => {
             )}
 
             <button
-                className="btn btn-primary position-fixed bottom-0 end-0 translate-middle-x mb-5 p-3 shadow"
+                className="assign-btn btn btn-warning shadow d-flex align-items-center justify-content-center"
+                style={{
+                    bottom: "6.5rem"
+                }}
                 onClick={() => setShowModalAssTeachToCls(true)}
             >
-                <i className="fas fa-user-plus me-2"></i>
-                Assign Teacher to Class
+                <i className="fas fa-user-plus"></i>
+                <span className="assign-text ms-2">Assign Teacher</span>
             </button>
 
             {/* Assign Teacher To Class Modal */}
@@ -723,7 +711,7 @@ const ClassList = () => {
             {showPopup && (
                 <div
                     className="alert alert-success position-fixed top-0 translate-middle-x mt-3 shadow"
-                    style={{ zIndex: 2000, width: "400px" ,right:"-10%" }}
+                    style={{ zIndex: 2000, width: "400px", right: "-10%" }}
                 >
                     {popupMessage}
                 </div>
@@ -731,12 +719,13 @@ const ClassList = () => {
 
             {/* ------------ */}
             <button
-                className="btn btn-primary position-fixed  end-0 translate-middle-x mb-2 p-3 shadow" style={{ bottom: "15%" }}
+                className="assign-btn btn btn-info shadow d-flex align-items-center justify-content-center"
                 onClick={() => setShowModalAssStuToCls(true)}
             >
-                <i className="fas fa-user-plus me-2"></i>
-                Assign Student to Class
+                <i className="fas fa-user-plus"></i>
+                <span className="assign-text ms-2">Assign Student</span>
             </button>
+
             {showModalAssStuToCls && (
                 <div className="modal fade show d-block" tabIndex="-1" role="dialog" style={{ backgroundColor: "rgba(0,0,0,0.5)" }}>
                     <div className="modal-dialog modal-dialog-centered" role="document">

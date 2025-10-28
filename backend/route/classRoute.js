@@ -6,9 +6,9 @@ const isAdminOrTeacher = require("../middleware/isAdminOrTeacher");
 
 const classRoute = express.Router();
 
-classRoute.post("/", isLoggedIn, isAdmin, createClass);
-classRoute.get("/", isLoggedIn, isAdmin, getClasses);
-classRoute.get("/:id", isLoggedIn, isAdminOrTeacher, getClass);
+classRoute.post("/createClass", isLoggedIn, isAdmin, createClass);
+classRoute.get("/getAllClasses", isLoggedIn, isAdmin, getClasses);
+classRoute.get("/:id", isLoggedIn, isAdmin, getClass);
 classRoute.put("/:id", updateClass);
 classRoute.delete("/:id", deleteClass);
 

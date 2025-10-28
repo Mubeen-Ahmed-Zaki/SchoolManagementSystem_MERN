@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const Sidebar = ({ activeSection, setActiveSection }) => {
-    const { userInfo } = useSelector((state) => state.auth); // 🔥 Redux se current user
+    const { userInfo } = useSelector((state) => state.auth); // Redux current user
 
-    const role = userInfo?.role; // role nikal lo
+    const role = userInfo?.role; // role
 
     return (
         <div className="sidebar" id="sidebar">
