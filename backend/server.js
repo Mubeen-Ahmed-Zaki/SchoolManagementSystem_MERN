@@ -44,6 +44,10 @@ app.use("/api/v1/students", studentRoute);
 app.use("/api/v1/teachers", teacherRoute);
 app.use("/api/v1/classes", classRoute);
 
+app.get("/", (req, res) => {
+  res.send("Backend is working fine!");
+});
+
 //? No page found middleware
 app.use(notFound);
 //? Global error handler middleware
