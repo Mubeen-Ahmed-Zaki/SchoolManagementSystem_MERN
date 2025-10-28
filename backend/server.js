@@ -24,7 +24,11 @@ connectDB().then(() => {
 
 // ! setup the middleware
 app.use(express.json());
-const allowedOrigins = ["http://localhost:3000", "http://localhost:3001"];
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:3001",
+  "https://school-management-system-mern-mu.vercel.app",
+];
 
 app.use(cors({
     origin: function (origin, callback) {
