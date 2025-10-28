@@ -3,7 +3,7 @@ export const SIGNUP_REQUEST = "SIGNUP_REQUEST";
 export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
 export const SIGNUP_FAIL = "SIGNUP_FAIL";
 
-const host = "http://localhost:7000"
+const host = "https://school-management-system-mern-mu.vercel.app"
 export const signupUser = (userData) => async (dispatch) => {
   try {
     dispatch({ type: SIGNUP_REQUEST });
