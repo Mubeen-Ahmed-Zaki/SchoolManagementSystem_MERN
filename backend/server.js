@@ -27,7 +27,7 @@ app.use(express.json());
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:3001",
-  "https://school-management-system-mern-mu.vercel.app",
+  "https://school-management-system-mern-wsc5.vercel.app",
 ];
 
 app.use(cors({
