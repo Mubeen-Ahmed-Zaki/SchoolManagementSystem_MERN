@@ -27,7 +27,7 @@ export const FETCH_MY_CLASSES_SUCCESS = "FETCH_MY_CLASSES_SUCCESS";
 export const FETCH_MY_CLASSES_FAIL = "FETCH_MY_CLASSES_FAIL"
 
 // API Base URL
-const host = 'http://localhost:7000'; // Ya apna backend URL
+const host = "https://school-management-system-mern-mu.vercel.app"; // Ya apna backend URL
 
 const getToken = (getState) => {
     try {
