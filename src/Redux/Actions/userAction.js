@@ -17,7 +17,7 @@ export const UPDATE_ROLE_REQUEST = "UPDATE_ROLE_REQUEST";
 export const UPDATE_ROLE_SUCCESS = "UPDATE_ROLE_SUCCESS";
 export const UPDATE_ROLE_FAIL = "UPDATE_ROLE_FAIL";
 
-const host = "http://localhost:7000";
+const host = "https://school-management-system-mern-mu.vercel.app";
 
 /* Helper: safely extract token */
 const getToken = (getState) => {
