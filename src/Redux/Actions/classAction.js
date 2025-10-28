@@ -15,7 +15,7 @@ export const DELETE_CLASS_REQUEST = "DELETE_CLASS_REQUEST";
 export const DELETE_CLASS_SUCCESS = "DELETE_CLASS_SUCCESS";
 export const DELETE_CLASS_FAIL = "DELETE_CLASS_FAIL";
 
-const host = "http://localhost:7000";
+const host = "https://school-management-system-mern-mu.vercel.app";
 
 // Helper → Get token
 const getToken = (getState) => {
